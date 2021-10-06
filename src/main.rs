@@ -55,8 +55,14 @@ fn parse_log(content: String, pattern: String, key_del: String, data_del: String
             let group_graph = log_map.get_mut(&group_key_value);
             let mut label = "".to_owned();
             for key in label_keys {
-                label.push_str(format!("{}: {}", key, parsed_line.get(key).unwrap()).as_str());
-                label.push_str("\n");
+                let parsed_key = parsed_line.get(key);
+                match  parsed_key {
+                    Some(value) => {
+                        label.push_str(format!("{}: {}", key, value).as_str());
+                        label.push_str("\n");
+                    },
+                    None => continue
+                }
             }
             match group_graph {
                 Some(events) => {
