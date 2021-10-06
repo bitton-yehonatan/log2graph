@@ -1,0 +1,13 @@
+[package]
+name = "log2graph"
+version = "0.1.0"
+authors = ["Yehonatan Bitton <bitton.yehonatan@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+tokio = { version = "1.12", features = ["macros", "time"]}
+futures = "0.3"
+structopt = "0.3.13"
+petgraph = "0.6.0"
