@@ -81,10 +81,14 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let opts = Cli::from_args();
     let content = std::fs::read_to_string(opts.path)?;
     let parsed_log = parse_log(content, opts.pattern, opts.keys_delimiter,  opts.params_delimiter, &opts.group_by, &opts.keys_to_print);
+    let output_dir = std::path::Path::new("./graph_results");
+    std::fs::create_dir_all(output_dir)?;
     for (group, group_graph) in parsed_log {
         println!("saving graph! {}", group);
         println!("{:?}", Dot::with_config(&group_graph, &[Config::EdgeNoLabel]));
-        let mut graph_file = File::create(format!("{}.dot", group)).unwrap();
+        let mut graph_file = File::create(
+            output_dir.join(format!("{}.dot", group))
+        )?;
         let output = format!("{}", Dot::with_config(&group_graph, &[Config::EdgeNoLabel]));
         graph_file.write_all(&output.as_bytes()).expect("could not write file");
     }
