@@ -28,6 +28,7 @@
 - [Built With](#built-with)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
   - [Creating A Pull Request](#creating-a-pull-request)
@@ -48,6 +49,11 @@ Running log2graph is very easy you only need to install the supplied create and 
 ### Prerequisites
 
 Make sure that rust is installed on your machine
+
+### Installation
+
+Install the tool using cargo
+`cargo install log2graph`
 
 ## Usage
 
