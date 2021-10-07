@@ -2,7 +2,18 @@
 name = "log2graph"
 version = "0.1.0"
 authors = ["Yehonatan Bitton <bitton.yehonatan@gmail.com>"]
+description = "create directed graphs from log files"
+homepage = "https://github.com/bitton-yehonatan/log2graph"
+repository = "https://github.com/bitton-yehonatan/log2graph"
+readme = "README.md"
 edition = "2018"
+license = "MIT"
+keywords = ["graphviz", "log", "dot"]
+categories = ["command-line-utilities", "development-tools::debugging", "visualization"]
+include = [
+    "**/*.rs",
+    "Cargo.toml",
+]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
